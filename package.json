@@ -1,0 +1,73 @@
+{
+  "name": "ts-library",
+  "version": "0.0.0",
+  "description": "Manage TypeScript Libraries with ease",
+  "main": "lib/commonjs/index.js",
+  "jsnext:main": "lib/es2015/index.js",
+  "module": "lib/es2015/index.js",
+  "typings": "lib/es2015/index.d.ts",
+  "bin": {
+    "tslib": "lib/commonjs/index.js"
+  },
+  "scripts": {
+    "build": "rimraf lib && tsc && tsc -P tsconfig.commonjs.json",
+    "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular && git add CHANGELOG.md && git commit -m 'chore(CHANGELOG): append to changelog'",
+    "commit": "git-cz",
+    "postinstall": "node postinstall.js",
+    "preversion": "npm run build",
+    "postversion": "npm run changelog && git push origin master && git push origin --tags && npm publish",
+    "release:minor": "npm version minor -m 'chore(package): v%s'",
+    "release:major": "npm version major -m 'chore(package): v%s'",
+    "test:lint": "tslint src/*.ts src/**/*.ts src/**/**/*.ts",
+    "test": "npm run test:lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TylorS/ts-lib.git"
+  },
+  "keywords": [
+    "typescript",
+    "library",
+    "npm",
+    "scaffold",
+    "build",
+    "test",
+    "manage",
+    "release",
+    "comver",
+    "semver"
+  ],
+  "author": "Tylor Steinberger <tlsteinberger167@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TylorS/ts-lib/issues"
+  },
+  "homepage": "https://github.com/TylorS/ts-lib#readme",
+  "config": {},
+  "dependencies": {
+    "js-beautify": "^1.6.4",
+    "listr": "^0.7.0",
+    "mkdirp": "^0.5.1",
+    "ramda": "^0.22.1",
+    "reginn": "^2.0.1",
+    "typed-prompts": "^1.0.0"
+  },
+  "devDependencies": {
+    "@motorcycle/tslint": "^1.0.0",
+    "@types/js-beautify": "0.0.28",
+    "@types/mkdirp": "^0.3.29",
+    "@types/mocha": "^2.2.33",
+    "@types/node": "^6.0.48",
+    "@types/ramda": "0.0.2",
+    "commitizen": "^2.8.6",
+    "conventional-changelog-cli": "^1.2.0",
+    "cz-conventional-changelog": "^1.2.0",
+    "ghooks": "^1.3.2",
+    "mocha": "^3.1.2",
+    "rimraf": "^2.5.4",
+    "ts-node": "^1.7.0",
+    "tslint": "^4.0.0-dev.1",
+    "typescript": "^2.2.0-dev.20161117",
+    "validate-commit-msg": "^2.8.2"
+  }
+}

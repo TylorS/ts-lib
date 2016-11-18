@@ -1,4 +1,5 @@
-
+export const GITIGNORE =
+`
 # Logs
 logs
 *.log
@@ -40,3 +41,4 @@ jspm_packages
 # generated files
 lib
 .tmp
+`;
