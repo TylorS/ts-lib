@@ -1,6 +1,6 @@
 {
   "name": "ts-library",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Manage TypeScript Libraries with ease",
   "main": "lib/commonjs/index.js",
   "jsnext:main": "lib/es2015/index.js",
