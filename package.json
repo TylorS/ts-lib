@@ -15,7 +15,7 @@
     "commit": "git-cz",
     "postinstall": "node postinstall.js",
     "preversion": "npm run build",
-    "postversion": "npm run changelog && git push origin master && git push origin --tags && npm publish",
+    "postversion": "npm run changelog && git push origin master --tags && npm publish",
     "release:minor": "npm version minor -m 'chore(package): v%s'",
     "release:major": "npm version major -m 'chore(package): v%s'",
     "test:lint": "tslint src/*.ts src/**/*.ts src/**/**/*.ts",
