@@ -1,3 +1,14 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/TylorS/ts-lib/compare/v1.1.0...v1.2.0) (2016-12-12)
+
+
+### Bug Fixes
+
+* **init:** use current version of typescript and tslint ([30436a6](https://github.com/TylorS/ts-lib/commit/30436a6))
+* **tsconfig:** es2015 builds with es5 source code ([cb44e91](https://github.com/TylorS/ts-lib/commit/cb44e91))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/TylorS/ts-lib/compare/v1.0.0...v1.1.0) (2016-11-20)
 
