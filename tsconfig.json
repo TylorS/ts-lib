@@ -17,6 +17,7 @@
     ]
   },
   "files": [
+    "node_modules/typed-prompts/src/inquirer.d.ts",
     "custom-typings/listr.d.ts",
     "src/index.ts"
   ]

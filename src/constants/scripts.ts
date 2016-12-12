@@ -1,3 +1,4 @@
+/* tslint:disable:max-line-length */
 export const SCRIPTS =
   {
     'test:lint': 'tslint src/**/*.ts src/*.ts',

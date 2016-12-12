@@ -65,7 +65,7 @@ function init () {
                 {
                   title: '.github/PULL_REQUEST_TEMPLATE.md',
                   task: () =>
-                    writeFile(join('.github/PULL_REQUEST_TEMPLATE.md'), PULL_REQUEST_TEMPLATE)
+                    writeFile(join('.github/PULL_REQUEST_TEMPLATE.md'), PULL_REQUEST_TEMPLATE),
                 },
                 {
                   title: '.vscode/settings.json',
