@@ -66,8 +66,8 @@
     "mocha": "^3.1.2",
     "rimraf": "^2.5.4",
     "ts-node": "^1.7.0",
-    "tslint": "^4.0.0-dev.1",
-    "typescript": "^2.2.0-dev.20161117",
+    "tslint": "^4.0.2",
+    "typescript": "^2.1.4",
     "validate-commit-msg": "^2.8.2"
   }
 }
