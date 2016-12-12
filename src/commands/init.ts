@@ -144,8 +144,8 @@ function init () {
                 `ghooks`,
                 `mocha`,
                 `ts-node`,
-                `typescript@next`,
-                `tslint@next`,
+                `typescript@latest`,
+                `tslint@latest`,
                 `validate-commit-msg`,
               ];
 
