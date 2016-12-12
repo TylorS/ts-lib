@@ -4,7 +4,7 @@ export const TSCONFIG =
     "declaration": true,
     "moduleResolution": "node",
     "module": "es2015",
-    "target": "es2015",
+    "target": "es5",
     "lib": [
       "es5",
       "es2015"
