@@ -1,24 +1,21 @@
 export const TSCONFIG =
 `{
   "compilerOptions": {
-    "declaration": true,
-    "moduleResolution": "node",
-    "module": "es2015",
-    "target": "es5",
     "lib": [
       "es5",
       "es2015"
     ],
+    "moduleResolution": "node",
+    "declaration": true,
     "noImplicitAny": true,
     "sourceMap": true,
     "noUnusedParameters": true,
     "strictNullChecks": true,
-    "outDir": "lib/es2015",
-    "types": [
-    ]
+    "outDir": ".tmp",
+    "types": []
   },
-  "files": [
-    "src/index.ts"
+  "include": [
+    "src/**/*.ts"
   ]
 }
 `;

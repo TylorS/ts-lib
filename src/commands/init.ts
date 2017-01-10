@@ -1,33 +1,31 @@
-import * as path from 'path';
-import * as fs from 'fs';
-import { exec } from 'child_process';
-
-import { command, alias, withCallback, Command } from 'reginn';
-import { reduce } from 'ramda';
-import { prompt, Question, InputQuestion } from 'typed-prompts';
-import * as jsonbeautify from 'js-beautify';
 import * as Listr from 'listr';
-import * as mkdirp from 'mkdirp';
-
 import * as constants from '../constants';
-import { isFile } from '../helpers';
+import * as fs from 'fs';
+import * as jsonbeautify from 'js-beautify';
+import * as mkdirp from 'mkdirp';
+import * as path from 'path';
 
-import { ISSUE_TEMPLATE } from '../templates/.github/ISSUE_TEMPLATE.md';
-import { PULL_REQUEST_TEMPLATE } from '../templates/.github/PULL_REQUEST_TEMPLATE.md';
-import { SETTINGS } from '../templates/.vscode/settings.json';
-import { SRC_INDEX } from '../templates/src/index';
-import { TEST_INDEX } from '../templates/test/index';
-import { TEST_TSCONFIG } from '../templates/test/tsconfig.json';
+import { Command, alias, command, withCallback } from 'reginn';
+import { InputQuestion, Question, prompt } from 'typed-prompts';
+
 import { CONTRIBUTING } from '../templates/CONTRIBUTING.md';
 import { EDITORCONFIG } from '../templates/dot-editorconfig';
 import { GITIGNORE } from '../templates/dot-gitignore';
-import { NPMIGNORE } from '../templates/dot-npmignore';
-import { TRAVIS } from '../templates/dot-travis.yml';
+import { ISSUE_TEMPLATE } from '../templates/.github/ISSUE_TEMPLATE.md';
 import { LICENSE } from '../templates/LICENSE.md';
+import { NORTHBROOK_CONFIG } from '../templates/northbrook';
+import { NPMIGNORE } from '../templates/dot-npmignore';
+import { PULL_REQUEST_TEMPLATE } from '../templates/.github/PULL_REQUEST_TEMPLATE.md';
 import { README } from '../templates/README.md';
-import { TSCONFIG_COMMONJS } from '../templates/tsconfig.commonjs.json';
+import { SETTINGS } from '../templates/.vscode/settings.json';
+import { SRC_INDEX } from '../templates/src/index';
+import { TEST_INDEX } from '../templates/src/index.test';
+import { TRAVIS } from '../templates/dot-travis.yml';
 import { TSCONFIG } from '../templates/tsconfig.json';
 import { TSLINT } from '../templates/tslint.json';
+import { exec } from 'child_process';
+import { isFile } from '../helpers';
+import { reduce } from 'ramda';
 
 const CURRENT_DIRECTORY = process.cwd();
 
@@ -76,12 +74,8 @@ function init () {
                   task: () => writeFile(join('src/index.ts'), SRC_INDEX),
                 },
                 {
-                  title: 'test/index.ts',
-                  task: () => writeFile(join('test/index.ts'), TEST_INDEX),
-                },
-                {
-                  title: 'test/tsconfig.json',
-                  task: () => writeFile(join('test/tsconfig.json'), TEST_TSCONFIG),
+                  title: 'src/index.test.ts',
+                  task: () => writeFile(join('src/index.test.ts'), TEST_INDEX),
                 },
                 {
                   title: 'CONTRIBUTING.md',
@@ -108,13 +102,13 @@ function init () {
                   task: (ctx: any) => writeFile(join('LICENSE.md'), LICENSE(ctx.name)),
                 },
                 {
+                  title: 'northbrook.ts',
+                  task: () => writeFile(join('northbrook.ts'), NORTHBROOK_CONFIG)
+                },
+                {
                   title: 'README.md',
                   task: (ctx: any) =>
                     writeFile(join('README.md'), README(ctx.packageName, ctx.description)),
-                },
-                {
-                  title: 'tsconfig.commonjs.json',
-                  task: () => writeFile(join('tsconfig.commonjs.json'), TSCONFIG_COMMONJS),
                 },
                 {
                   title: 'tsconfig.json',
@@ -136,17 +130,14 @@ function init () {
             task: () => {
               const dependencies = [
                 `@motorcycle/tslint`,
+                `@northbrook/tsc`,
+                `@northbrook/tslint`,
                 `@types/mocha`,
                 `@types/node`,
-                `commitizen`,
-                `cz-conventional-changelog`,
-                `conventional-changelog-cli`,
-                `ghooks`,
                 `mocha`,
-                `ts-node`,
-                `typescript@latest`,
-                `tslint@latest`,
-                `validate-commit-msg`,
+                `northbrook`,
+                `tslint`,
+                `typescript`,
               ];
 
               return new Listr(dependencies.map(dep => ({
@@ -234,12 +225,11 @@ function modifyPackageJson() {
 
   return new Promise((resolve) => {
     const pkg = Object.assign({}, pkgJson, {
-      config: constants.CONFIG,
       scripts: constants.SCRIPTS,
-      main: 'lib/commonjs',
-      'jsnext:main': 'lib/es2015/index.js',
-      module: 'lib/es2015/index.js',
-      typings: 'lib/es2015/index.d.ts',
+      main: 'lib/index.js',
+      'jsnext:main': 'lib.es2015/index.js',
+      module: 'lib.es2015/index.js',
+      typings: 'lib.es2015/index.d.ts',
     });
 
     return writeFile(join('package.json'), beautify(pkg)).then(resolve);

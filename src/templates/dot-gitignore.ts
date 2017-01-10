@@ -40,5 +40,6 @@ jspm_packages
 
 # generated files
 lib
+lib.es2015
 .tmp
 `;
