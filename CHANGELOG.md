@@ -1,3 +1,13 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/TylorS/ts-lib/compare/v1.2.0...v2.0.0) (2017-01-10)
+
+
+### Features
+
+* **tslib:** implement on top of northbrook ([78b6c6b](https://github.com/TylorS/ts-lib/commit/78b6c6b))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/TylorS/ts-lib/compare/v1.1.0...v1.2.0) (2016-12-12)
 
