@@ -11,8 +11,7 @@ export const TSCONFIG =
     "sourceMap": true,
     "noUnusedParameters": true,
     "strictNullChecks": true,
-    "outDir": ".tmp",
-    "types": []
+    "outDir": ".tmp"
   },
   "include": [
     "src/**/*.ts"

@@ -130,6 +130,7 @@ function init () {
             task: () => {
               const dependencies = [
                 `@motorcycle/tslint`,
+                `@northbrook/mocha`,
                 `@northbrook/tsc`,
                 `@northbrook/tslint`,
                 `@types/mocha`,

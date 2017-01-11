@@ -1,6 +1,6 @@
 export const TEST_INDEX =
 `import * as assert from 'assert';
-import { Awesome } from '../src';
+import { Awesome } from './';
 
 describe('Awesome', function () {
   it('isAwesome', function () {

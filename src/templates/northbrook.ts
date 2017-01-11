@@ -5,7 +5,7 @@ import { plugin as tslint } from '@northbrook/tslint';
 import { plugin as mocha } from '@northbrook/mocha';
 import { plugin as northbrook } from 'northbrook/plugins';
 
-const config = 
+const config =
   {
     plugins: [
       northbrook,
@@ -16,23 +16,23 @@ const config =
 
     mocha: {
       patterns: [
-        'src/**/*.test.ts'
-      ]
+        'src/**/*.test.ts',
+      ],
     },
 
     tsc: {
       es2015: true,
       patterns: [
         'src/**/*.ts',
-        '!src/**/*.test.ts'
-      ]
+        '!src/**/*.test.ts',
+      ],
     },
 
     tslint: {
       patterns: [
-        'src/**/*.ts'
-      ]
-    }
+        'src/**/*.ts',
+      ],
+    },
   };
 
 export = config;
