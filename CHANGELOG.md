@@ -1,3 +1,13 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/TylorS/ts-lib/compare/v2.0.0...v2.1.0) (2017-01-11)
+
+
+### Bug Fixes
+
+* **tslib:** fix for various things ([fdfa946](https://github.com/TylorS/ts-lib/commit/fdfa946))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/TylorS/ts-lib/compare/v1.2.0...v2.0.0) (2017-01-10)
 
