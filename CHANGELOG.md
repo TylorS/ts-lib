@@ -1,3 +1,18 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/TylorS/ts-lib/compare/v2.1.0...v3.0.0) (2017-01-28)
+
+
+### Bug Fixes
+
+* **tslib:** fix errors ([03daecf](https://github.com/TylorS/ts-lib/commit/03daecf))
+
+
+### Features
+
+* **tslib:** require global installation ([270eeba](https://github.com/TylorS/ts-lib/commit/270eeba))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/TylorS/ts-lib/compare/v2.0.0...v2.1.0) (2017-01-11)
 
