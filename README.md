@@ -13,13 +13,15 @@ answer 3 simple questions, and thats it!
 
 ## Here is how to use it
 ```sh
+npm install -g ts-library
+
 mkdir myCoolLibrary
 
 cd myCoolLibrary
 
 npm init # follow the prompts
 
-npm i -D ts-library # answer a few questions and you're good to go!
+tslib init # answer a few questions and you're good to go!
 ```
 
 ## Features

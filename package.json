@@ -13,7 +13,6 @@
     "build": "rimraf lib && tsc && tsc -P tsconfig.commonjs.json",
     "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular && git add CHANGELOG.md && git commit -m 'chore(CHANGELOG): append to changelog'",
     "commit": "git-cz",
-    "postinstall": "node postinstall.js",
     "preversion": "npm run build",
     "postversion": "npm run changelog && git push origin master --tags && npm publish",
     "release:minor": "npm version minor -m 'chore(package): v%s'",
