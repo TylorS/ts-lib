@@ -48,7 +48,6 @@ function init () {
                 () => makeDirectory(join('.github')),
                 () => makeDirectory(join('.vscode')),
                 () => makeDirectory(join('src')),
-                () => makeDirectory(join('test')),
               );
             },
           },
